@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <!-- 独立css -->
+    <link rel="stylesheet" type="text/css" href="../static/chatroom.css">
+</head>
+<body>
+<div>
+    <div style="float:left;width:40%">
+        <p>请选择你是谁：</p>
+        <select id="selectName">
+            <option value="1">请选择</option>
+            <option value="1001">Tom</option>
+            <option value="1002">Jack</option>
+            <option value="1003">Jane</option>
+            <option value="1004">Bom</option>
+            <option value="1005">Maria</option>
+        </select>
+        <div class="chatWindow">
+            <p style="color:darkgrey">群聊：</p>
+            <section id="chatRecord" class="chatRecord">
+                <p id="titleval1" style="color:#CD2626;"></p>
+            </section>
+            <section class="sendWindow">
+                <textarea name="sendChatMsg" id="sendChatMsg" class="sendChatMsg"></textarea>
+                <input type="button" name="sendMessage" id="sendMassMessage" class="sendMessage"
+                       value="发送">
+            </section>
+        </div>
+    </div>
+    <div style="float:right; width:40%">
+        <p>请选择你要发给谁：</p>
+        <select id="selectName2">
+            <option value="1">请选择</option>
+            <option value="1001">Tom</option>
+            <option value="1002">Jack</option>
+            <option value="1003">Jane</option>
+            <option value="1004">Bom</option>
+            <option value="1005">Maria</option>
+        </select>
+        <div class="chatWindow">
+            <p style="color:darkgrey">单独聊：</p>
+            <section id="chatRecord2" class="chatRecord">
+                <p id="titleval2" style="color:#CD2626;"></p>
+            </section>
+            <section class="sendWindow">
+                <textarea name="sendChatMsg2" id="sendChatMsg2" class="sendChatMsg"></textarea>
+                <input type="button" name="sendMessage" id="sendAloneMessage" class="sendMessage"
+                       value="发送">
+            </section>
+        </div>
+    </div>
+</div>
+<!-- 独立JS -->
+<script type="text/javascript" src="../static/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../static/chatroom.js" charset="utf-8"></script>
+<script type="text/javascript" src="../static/sockjs.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../static/stomp.min.js" charset="utf-8"></script>
+
+</body>
+</html>
