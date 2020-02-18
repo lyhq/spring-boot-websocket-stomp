@@ -6,17 +6,14 @@ $(function () {
     connect();
 
     $("#selectName").change(function () {
-        alert("sendAloneUser...");
         sendAloneUser();
     });
 
     $("#sendMassMessage").click(function () {
-        alert("sendMassMessage...");
         sendMassMessage();
     });
 
     $("#sendAloneMessage").click(function () {
-        alert("sendAloneMessage...");
         sendAloneMessage();
     });
 })
@@ -48,7 +45,7 @@ function disconnect() {
 
 //广播（一对多）
 function stompTopic() {
-    //通过stompClient.subscribe订阅/topic/getResponse 目标(destination)发送的消息（广播接收信息）
+    //通过stompClient.subscribe订阅/topic/response 目标(destination)发送的消息（广播接收信息）
     stompClient.subscribe('/mass/response', function (response) {
         var message = JSON.parse(response.body);
         //展示广播接收的内容
@@ -61,7 +58,7 @@ function stompTopic() {
 function stompQueue() {
     var userId = $("#selectName").val();
     alert("监听:" + userId);
-    //通过stompClient.subscribe订阅/topic/getResponse 目标(destination)发送的消息（队列接收信息）
+    //通过stompClient.subscribe订阅/topic/response 目标(destination)发送的消息（队列接收信息）
     stompClient.subscribe('/user/' + userId + '/alone/response', function (response) {
         var message = JSON.parse(response.body);
         //展示一对一的接收的内容接收
